@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Detalles
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+      <ion-item *ngIf="todo">
+        <ion-input required type="text" placeholder="Task" [(ngModel)] = "todo.task">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="todo">
+        <ion-input required type="number" placeholder="Priority" [(ngModel)] = "todo.priority">
+        </ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-button expand = "full" (click)="saveTodo()">Guardar</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink="/" routerDirection="forward" (click)=onRemove(todoId)>
+      <ion-icon name="trash">
+
+      </ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+</ion-content>
